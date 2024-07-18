@@ -29,5 +29,12 @@ const puppeteer = require("puppeteer");
   console.log("URL después del clic:", currentURL);
   console.log("Título de la página después del clic:", currentTitle);
 
+  // Verificar el estado HTTP de la página actual
+  const response = await page.waitForResponse(response => response.status() === 200);
+  console.log(`Estado HTTP de la página: ${response.status()}`);
+
+  // Mantener el navegador abierto
+  await new Promise(resolve => setTimeout(resolve, 30000)); // Mantener abierto por 30 segundos
+
   await browser.close();
 })();

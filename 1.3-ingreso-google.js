@@ -13,11 +13,11 @@ const puppeteer = require("puppeteer");
   // Ingresa el correo electrónico
   await page.type('input[type="email"]', "escandonalejandro16@gmail.com");
 
-  // Espera a que aparezca el botón de siguiente
-  await page.waitForSelector('div.Xb9hP input[type="submit"]');
+  // Espera a que el botón de siguiente esté disponible
+  await page.waitForSelector('.VfPpkd-dgl2Hf-ppHlrf-sM5MNb .VfPpkd-LgbsSe.VfPpkd-LgbsSe-OWXEXe-k8QpJ.VfPpkd-LgbsSe-OWXEXe-dgl2Hf.nCP5yc.AjY5Oe.DuMIQc.LQeN7.BqKGqe.Jskylb.TrZEUc.lw1w4b');
 
   // Hacer clic en el botón de siguiente
-  await page.click('div.Xb9hP input[type="submit"]');
+  await page.click('.VfPpkd-dgl2Hf-ppHlrf-sM5MNb .VfPpkd-LgbsSe.VfPpkd-LgbsSe-OWXEXe-k8QpJ.VfPpkd-LgbsSe-OWXEXe-dgl2Hf.nCP5yc.AjY5Oe.DuMIQc.LQeN7.BqKGqe.Jskylb.TrZEUc.lw1w4b');
 
   // Esperar a que la página cargue después del clic
   await page.waitForNavigation({ waitUntil: "domcontentloaded" });
@@ -29,5 +29,5 @@ const puppeteer = require("puppeteer");
   console.log("URL después del clic:", currentURL);
   console.log("Título de la página después del clic:", currentTitle);
 
-  // await browser.close();
+  await browser.close();
 })();
